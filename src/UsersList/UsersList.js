@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Avatar, Icon, Table } from "antd";
+import { Avatar, Table } from "antd";
 
 class UsersList extends Component {
   render() {
@@ -15,7 +15,6 @@ class UsersList extends Component {
         title: "Name",
         dataIndex: "name"
       },
-
       {
         title: "Owner",
         dataIndex: "owner"
@@ -32,7 +31,7 @@ class UsersList extends Component {
 
     return (
       <div>
-        <Table dataSource={dataSource} columns={columns} rowKey="id" />;
+        <Table dataSource={dataSource} columns={columns} rowKey="id" />
       </div>
     );
   }

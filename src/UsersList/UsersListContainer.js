@@ -1,12 +1,28 @@
 import React, { Component } from "react";
 import UsersList from "./UsersList";
-import users from "../data/users";
+import { graphql } from "react-apollo/index";
+import gql from "graphql-tag";
+
+const USERS_QUERY = gql`
+  {
+    users {
+      name
+      img
+      type
+      owner
+      address
+    }
+  }
+`;
 
 class UsersListContainer extends Component {
   state = {};
 
-  componentDidMount() {
-    this.setState({ usersList: users });
+  componentWillReceiveProps(nextProps) {
+    const { data } = nextProps;
+    if (data.users) {
+      this.setState({ usersList: data.users });
+    }
   }
 
   render() {
@@ -15,4 +31,4 @@ class UsersListContainer extends Component {
   }
 }
 
-export default UsersListContainer;
+export default graphql(USERS_QUERY)(UsersListContainer);
