@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "antd/dist/antd.css";
-import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./routes";
 import { LocaleProvider } from "antd";
 
 import registerServiceWorker from "./registerServiceWorker";
@@ -20,7 +21,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <LocaleProvider>
-      <App />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
     </LocaleProvider>
   </ApolloProvider>,
   document.getElementById("root")
