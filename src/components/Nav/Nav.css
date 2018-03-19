@@ -1,0 +1,11 @@
+.layout {
+  padding: 0 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #26282b; }
+  .layout h1 {
+    color: #d8d8d8;
+    margin-bottom: 0; }
+  .layout a {
+    margin: 0 10px; }
